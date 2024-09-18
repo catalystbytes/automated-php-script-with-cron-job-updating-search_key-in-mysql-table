@@ -31,3 +31,9 @@ This repository contains a PHP script that automates the updating of the `search
   $username = 'your_username';
   $password = 'your_password';
 3. Upload the script to your server, e.g., /var/www/html/scripts/update_search_key.php.
+
+### Step 2: Set Up the Cron Job
+To schedule the script to run daily at midnight, follow these steps:
+1. Open the crontab editor:
+   ```bash
+crontab -e
