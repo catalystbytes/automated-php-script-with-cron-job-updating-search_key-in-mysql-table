@@ -22,18 +22,42 @@ This repository contains a PHP script that automates the updating of the `search
 
 ### Step 1: Configure the PHP Script
 1. Clone this repository:
-   ```bash
+```bash
    git clone https://github.com/yourusername/loan-search-key-updater.git
+```
 2. Update the database connection details in the update_search_key.php file:
-   ```bash
+```bash
   $host = 'your_host';
   $dbname = 'your_database';
   $username = 'your_username';
   $password = 'your_password';
+```
 3. Upload the script to your server, e.g., /var/www/html/scripts/update_search_key.php.
 
 ### Step 2: Set Up the Cron Job
 To schedule the script to run daily at midnight, follow these steps:
 1. Open the crontab editor:
-   ```bash
+```bash
 crontab -e
+```
+2. Add the following cron job:
+```bash
+0 0 * * * /usr/bin/php /var/www/html/scripts/update_search_key.php >/dev/null 2>&1
+```
+### Explanation:
+
+0 0 * * *: Runs the script at midnight every day.
+/usr/bin/php: The path to the PHP executable (verify with which php).
+/var/www/html/scripts/update_search_key.php: The path to your PHP script.
+>/dev/null 2>&1: Discards output and errors, preventing clutter in log files.
+
+3. Save and exit the crontab editor.
+
+To verify the cron job:
+```bash
+crontab -l
+```
+### Error Handling
+The script ensures that if any error occurs during execution, the transaction is rolled back, preventing partial updates.
+Any errors will be logged using error_log() for troubleshooting purposes.
+
