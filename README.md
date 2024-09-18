@@ -46,10 +46,10 @@ crontab -e
 ```
 ### Explanation:
 
-0 0 * * *: Runs the script at midnight every day.
-/usr/bin/php: The path to the PHP executable (verify with which php).
-/var/www/html/scripts/update_search_key.php: The path to your PHP script.
->/dev/null 2>&1: Discards output and errors, preventing clutter in log files.
+  - 0 0 * * *: Runs the script at midnight every day.
+  - /usr/bin/php: The path to the PHP executable (verify with which php).
+  - /var/www/html/scripts/update_search_key.php: The path to your PHP script.
+  - >/dev/null 2>&1: Discards output and errors, preventing clutter in log files.
 
 3. Save and exit the crontab editor.
 
