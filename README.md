@@ -26,8 +26,8 @@ This repository contains a PHP script that automates the updating of the `search
    git clone https://github.com/yourusername/loan-search-key-updater.git
 2. Update the database connection details in the update_search_key.php file:
    ```bash
-$host = 'your_host';
-$dbname = 'your_database';
-$username = 'your_username';
-$password = 'your_password';
+  $host = 'your_host';
+  $dbname = 'your_database';
+  $username = 'your_username';
+  $password = 'your_password';
 3. Upload the script to your server, e.g., /var/www/html/scripts/update_search_key.php.
